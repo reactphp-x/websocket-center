@@ -1,6 +1,6 @@
 # ReactPHP WebSocket Center
 
-一个基于ReactPHP的分布式WebSocket中心管理系统，支持WebSocket服务的注册、发现和消息路由。
+一个基于ReactPHP的分布式WebSocket中心管理系统，支持WebSocket服务实例注册到多个注册中心，并支持WebSocket服务实例通过任一注册中心进行服务调用。
 
 ## 特性
 
@@ -10,7 +10,6 @@
 - 🌐 RESTful API接口支持
 - 📱 Web前端管理界面
 - 🔧 灵活的中间件支持
-- 📊 实时服务状态监控
 
 ## 安装
 
