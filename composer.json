@@ -1,0 +1,20 @@
+{
+    "name": "reactphp-x/websocket-center",
+    "require": {
+        "reactphp-x/websocket-group": "^1.0",
+        "reactphp-x/register-center": "^1.0",
+        "monolog/monolog": "^3.9"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "ReactphpX\\WebsocketCenter\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "wpjscc",
+            "email": "wpjscc@gmail.com"
+        }
+    ]
+}
