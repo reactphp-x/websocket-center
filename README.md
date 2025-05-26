@@ -27,7 +27,7 @@ composer require reactphp-x/websocket-center
 
 ```bash
 # 启动第一个注册中心
-REGISTER_CENTER_PORT=8010 HTTP_PORT=8011 php examples/register.php
+REGISTER_CENTER_PORT=8010 HTTP_PORT=8011 OTHER_REGISTER_CENTER_PORT=8012,8014 php examples/register.php
 
 # 启动第二个注册中心
 REGISTER_CENTER_PORT=8012 HTTP_PORT=8013 php examples/register.php

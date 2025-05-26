@@ -31,15 +31,21 @@ $center = new Register(getenv('REGISTER_CENTER_PORT') ?: 8010, $loop, $logger);
 $center->on('master-authenticated', function ($masterId, $tunnelStream) use ($center) {
     echo "Master authenticated: " . $masterId . PHP_EOL;
     // todo 同步其它注册中心信息
-    // $center->writeRawMessageToAllMasters([
-    //     'cmd' => 'register',
-    //     'registers' => [
-    //         [
-    //             'host' => '127.0.0.1',
-    //             'port' => 8011,
-    //         ]
-    //     ]
-    // ]);
+    if (getenv("OTHER_REGISTER_CENTER_PORT")) {
+        $ports = explode(',', getenv("OTHER_REGISTER_CENTER_PORT"));
+        foreach ($ports as $port) {
+            $center->writeRawMessageToAllMasters([
+                'cmd' => 'register',
+                'registers' => [
+                    [
+                        'host' => '127.0.0.1',
+                        'port' => (int) $port,
+                    ]
+                ]
+            ]);
+        }
+    }
+    
 });
 $center->start();
 
